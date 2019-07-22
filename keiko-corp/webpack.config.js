@@ -1,3 +1,4 @@
+// DOES NOT WORK
 var webpack = require('webpack');
 
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
