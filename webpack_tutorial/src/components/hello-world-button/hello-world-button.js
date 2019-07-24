@@ -1,15 +1,19 @@
-import './hello-world-button.css';
+import './hello-world-button.scss';
 
 export class HelloWorldButton {
+
+    buttonCssClass = 'hello-world-button';
+    paragraphCssClass = 'hello-world-paragraph';
+
     render() {
         const button = document.createElement('button');
         button.innerHTML = 'Hello World';
-        button.classList.add('hello-world-button');
+        button.classList.add(this.buttonCssClass);
         const body = document.querySelector('body');
         body.onclick = () => {
             const p = document.createElement('p');
             p.innerHTML = 'Hello World';
-            p.classList.add('hello-world-paragraph');
+            p.classList.add(this.paragraphCssClass);
             body.appendChild(p);
         }
         body.appendChild(button);
