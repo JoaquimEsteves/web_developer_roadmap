@@ -10,7 +10,7 @@ export class HelloWorldButton {
         button.innerHTML = 'Hello World';
         button.classList.add(this.buttonCssClass);
         const body = document.querySelector('body');
-        body.onclick = () => {
+        button.onclick = () => {
             const p = document.createElement('p');
             p.innerHTML = 'Hello World';
             p.classList.add(this.paragraphCssClass);
