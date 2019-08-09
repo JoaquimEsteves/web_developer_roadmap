@@ -1,0 +1,19 @@
+.scrollCards {
+    overflow-y: scroll;
+    
+    height: 50vh;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.scrollCards::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
