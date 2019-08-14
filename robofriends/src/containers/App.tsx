@@ -7,6 +7,7 @@ import ErrorBoundary from '../components/error_boundaries/error_boundary';
 import { setSearchField, setRequestRobots } from '../state_management/actions';
 import { AppState, AppProps } from '../state_management/types';
 import { connect } from 'react-redux';
+import './App.scss';
 
 const mapStateToProps = (state: AppState) => {
     return {
@@ -57,9 +58,18 @@ class App extends React.Component<AppProps> {
 
         return (
             <div className="tc">
-                {Header(onSearchChange)}
+                <Header />
+                <div>
+                    <input
+                        aria-label='Search the robots yo'
+                        className="searchBox"
+                        type='search' placeholder='yo'
+                        onChange={onSearchChange}
+                    />
+                </div>
                 <Scroll>
                     <ErrorBoundary>
+                        {/* <CardList IntrinsicAttributes={filteredRobots}/> */}
                         {CardList(filteredRobots)}
                     </ErrorBoundary>
                 </Scroll>

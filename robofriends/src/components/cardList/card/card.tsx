@@ -6,7 +6,7 @@ const Card = (props: robotProps) => {
     const {id, name, email} = props;
     return (
         <div key={`${id}`} className="card">
-            <img src={`https://robohash.org/${id}?200x200`} alt='card' />
+            <img src={`https://robohash.org/${id}?size=200x200`} alt='card' />
             <div>
                 <h2>{name}</h2>
                 <p>{email}</p>

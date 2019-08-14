@@ -33,5 +33,4 @@ export const robots: robotProps[] = [
         username: "topRatherNotSay",
         email: 'top@misteriousl.y'
     },
-
 ];

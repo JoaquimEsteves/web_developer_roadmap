@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`try out the snapshot yo 1`] = `
+"<CounterButton color=\\"red\\">
+  <button color=\\"red\\" onClick={[Function]}>
+    Count: 
+    0
+      Yo
+  </button>
+</CounterButton>"
+`;

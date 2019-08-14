@@ -1,0 +1,19 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "chrome-launch-debug-mode",
+            "type": "process",
+            "command": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+            "args": [
+                "--remote-debugging-port=9222",
+                "--no-first-run",
+                "--no-default-browser-check",
+                "--user-data-dir=/tmp/vscode-chrome-debug-rix",
+                   "http://localhost:3000"
+            ]
+        }
+    ]
+}

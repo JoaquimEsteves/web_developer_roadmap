@@ -1,13 +1,26 @@
 import React from 'react';
-import './header.scss';
+import CounterButton from '../counterButton/counterButton';
 
-const Header = (searchChangeCB: ((event: React.ChangeEvent<HTMLInputElement>) => void)) => (
+/*const Header = React.memo(() => (
     <div className="header">
         <h1>Yo</h1>
-        <div>
-            <input className="searchBox" type='search' placeholder='yo' onChange={searchChangeCB} />
-        </div>
     </div>
-);
+));*/
+
+class Header extends React.Component {
+    shouldComponentUpdate(_nextProps: any,_nextState: any) {
+        return false;
+    }
+    
+    render() {
+        console.log('Header');
+        return (
+            <div className="header">
+                <h1>Yo</h1>
+                <CounterButton color={"green"}/>
+            </div>
+        );
+    }
+}
 
 export default Header;
