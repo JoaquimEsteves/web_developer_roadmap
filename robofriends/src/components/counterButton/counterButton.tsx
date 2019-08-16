@@ -15,7 +15,9 @@ class CounterButton extends PureComponent<{color: string}, {count: Number}> {
     render() {
         console.log('CounterButton Rendered');
         return (
-            <button color={this.props.color} onClick={this.updateCount}>
+            <button 
+            id='counter'
+            color={this.props.color} onClick={this.updateCount}>
                 Count: {this.state.count}  Yo
             </button>
         );

@@ -2,7 +2,7 @@ export interface robotProps {
     id: Number; name: string; username:string; email: string;
 }
 
-export const robots: robotProps[] = [
+export const example_robots: robotProps[] = [
     {
         id: 1,
         name: "Top Boy",

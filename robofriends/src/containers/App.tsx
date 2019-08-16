@@ -9,7 +9,7 @@ import { AppState, AppProps } from '../state_management/types';
 import { connect } from 'react-redux';
 import './App.scss';
 
-const mapStateToProps = (state: AppState) => {
+export const mapStateToProps = (state: AppState) => {
     return {
         searchField: state.searchRobots.searchField,
         robots: state.requestRobots.robots,
@@ -18,7 +18,7 @@ const mapStateToProps = (state: AppState) => {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>) => {
+export const mapDispatchToProps = (dispatch: Dispatch<any>) => {
     return {
         onSearchChange: (event: { target: { value: string; }; }) => {
             return dispatch(setSearchField(event.target.value))
@@ -29,21 +29,20 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => {
 
 
 
-class App extends React.Component<AppProps> {
+export class App extends React.Component<AppProps, AppState> {
 
     async componentDidMount() {
 
         this.props.onRequestRobots();
     }
-
+    filterRobots = (robots:robotProps[] | []) => robots.filter((robot: robotProps) => {
+        let robot_name = robot.name.toLowerCase();
+        let search_field = this.props.searchField.toLowerCase();
+        return robot_name.includes(search_field);
+    });
+    
     render() {
-        const { searchField, onSearchChange, robots, isPending } = this.props;
-
-        const filteredRobots = robots.filter((robot: robotProps) => {
-            let robot_name = robot.name.toLowerCase();
-            let search_field = searchField.toLowerCase();
-            return robot_name.includes(search_field);
-        });
+        const { onSearchChange, robots, isPending } = this.props;
         if (isPending) {
             return (
                 <div className="tc">
@@ -53,8 +52,6 @@ class App extends React.Component<AppProps> {
                 </div>
             );
         }
-
-
 
         return (
             <div className="tc">
@@ -69,8 +66,8 @@ class App extends React.Component<AppProps> {
                 </div>
                 <Scroll>
                     <ErrorBoundary>
-                        {/* <CardList IntrinsicAttributes={filteredRobots}/> */}
-                        {CardList(filteredRobots)}
+                        {/* <CardList IntrinsicAttributes={filterRobots}/> ??????*/}
+                        {CardList(this.filterRobots(robots))}
                     </ErrorBoundary>
                 </Scroll>
             </div>
