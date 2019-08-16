@@ -1,9 +1,5 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { robotProps } from '../components/cardList/robots';
-import { AppProps, AppState } from '../state_management/types';
-import { mapDispatchToProps, mapStateToProps } from './App';
-import '../setupTests';
+import { mapDispatchToProps, mapStateToProps } from '../App';
+import '../../setupTests';
 
 
 

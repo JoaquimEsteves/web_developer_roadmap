@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { robotProps } from '../components/cardList/robots';
-import { AppProps } from '../state_management/types';
-import { App } from './App';
-import '../setupTests';
+import { robotProps } from '../../components/cardList/robots';
+import { AppProps } from '../../state_management/types';
+import { App } from '../App';
+import '../../setupTests';
 
 let wrapper: ShallowWrapper<any, any>;
 

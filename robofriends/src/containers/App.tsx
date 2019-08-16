@@ -17,10 +17,10 @@ export const mapStateToProps = (state: AppState) => {
         error: state.requestRobots.error,
     }
 }
-
 export const mapDispatchToProps = (dispatch: Dispatch<any>) => {
     return {
-        onSearchChange: (event: { target: { value: string; }; }) => {
+        onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+            console.log(event);
             return dispatch(setSearchField(event.target.value))
         },
         onRequestRobots: () => dispatch(setRequestRobots())
@@ -32,15 +32,14 @@ export const mapDispatchToProps = (dispatch: Dispatch<any>) => {
 export class App extends React.Component<AppProps, AppState> {
 
     async componentDidMount() {
-
         this.props.onRequestRobots();
     }
-    filterRobots = (robots:robotProps[] | []) => robots.filter((robot: robotProps) => {
+    filterRobots = (robots: robotProps[] | []) => robots.filter((robot: robotProps) => {
         let robot_name = robot.name.toLowerCase();
         let search_field = this.props.searchField.toLowerCase();
         return robot_name.includes(search_field);
     });
-    
+
     render() {
         const { onSearchChange, robots, isPending } = this.props;
         if (isPending) {
@@ -66,7 +65,7 @@ export class App extends React.Component<AppProps, AppState> {
                 </div>
                 <Scroll>
                     <ErrorBoundary>
-                        {/* <CardList IntrinsicAttributes={filterRobots}/> ??????*/}
+                        {/* <CardList {this.filterRobots(robots)}/> */}
                         {CardList(this.filterRobots(robots))}
                     </ErrorBoundary>
                 </Scroll>

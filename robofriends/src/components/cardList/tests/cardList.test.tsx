@@ -1,9 +1,6 @@
-import React from 'react';
-
-
-import { shallow, mount, render } from 'enzyme';
-import CardList from './cardList';
-import '../../setupTests';
+import { mount } from 'enzyme';
+import CardList from '../cardList';
+import '../../../setupTests';
 
 it('try out the snapshot yo', () => {
     const example = [{

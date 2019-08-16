@@ -13,7 +13,6 @@ class CounterButton extends PureComponent<{color: string}, {count: Number}> {
     }
 
     render() {
-        console.log('CounterButton Rendered');
         return (
             <button 
             id='counter'

@@ -6,12 +6,24 @@
     "configurations": [
         {
             "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "node",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            // "userDataDir": true,
-            "trace":true,
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}/src"
-        }
+            "name": "Launch via NPM",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script",
+                "debug"
+            ],
+            "port": 9229,
+            "skipFiles": [
+                "<node_internals>/**/*.js"
+            ]
+        },
     ]
 }

@@ -12,42 +12,38 @@ export type REQUEST_ROBOTS =
     'REQUEST_ROBOTS_FAILED';
 
 
-export interface setSearchFieldAction {
+export type setSearchFieldAction =  {
     type: "CHANGE_SEARCH_FIELD",
     payload: string
 }
 
-export interface requestRobotsAction {
+export type requestRobotsAction =  {
     type: REQUEST_ROBOTS,
     payload?: string | robotProps[],
 }
 
-export interface stateRobots {
+export type stateRobots =  {
     isPending: boolean,
     robots: robotProps[] | [],
     error: string
 }
 
-export interface stateSearch {
+export type stateSearch =  {
     searchField: string
 }
 
 
-export interface AppState {
+export type AppState =  {
     searchRobots: stateSearch,
     requestRobots: stateRobots
 }
 
 
-export interface AppProps {
+export type AppProps =  {
     error: string,
     isPending: boolean,
     onRequestRobots: () => void,
-    onSearchChange: (event: { target: { value: string; }; }) => void,
+    onSearchChange: (event: React.ChangeEvent<HTMLInputElement> ) => void,
     robots: robotProps[] | [],
     searchField: string,
 }
-// export interface setSearchFieldAction {
-//     type: "CHANGE_SEARCH_FIELD",
-//     payload: string
-// }

@@ -12,20 +12,24 @@ export const setSearchField = (text: string): setSearchFieldAction => {
     }
 };
 
-const ROBOTS_LOCATION = 'https://jsonplaceholder.typicode.com/users';
-export const setRequestRobots = () => (dispatch: Dispatch<requestRobotsAction>) => {
+export const ROBOTS_LOCATION = 'https://jsonplaceholder.typicode.com/users';
+export const setRequestRobots = () => {
     // Dispatches an requestRobotsAction
-    dispatch({
-        type: REQUEST_ROBOTS_PENDING,
-    });
-    fetch(ROBOTS_LOCATION)
-        .then(response => response.json())
-        .then(data => dispatch({
-            type: REQUEST_ROBOTS_SUCCESS,
-            payload: data
-        }))
-        .catch(error => dispatch({
-            type: REQUEST_ROBOTS_FAILED,
-            payload: error
-        }));
+    return async (dispatch: Dispatch<requestRobotsAction>) => {
+        await dispatch({
+            type: REQUEST_ROBOTS_PENDING,
+        })
+        await fetch(ROBOTS_LOCATION)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => dispatch({
+                type: REQUEST_ROBOTS_SUCCESS,
+                payload: data
+            }))
+            .catch(error => dispatch({
+                type: REQUEST_ROBOTS_FAILED,
+                payload: error
+            }));
+    }
 }

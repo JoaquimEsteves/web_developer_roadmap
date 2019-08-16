@@ -13,7 +13,6 @@ class Header extends React.Component {
     }
     
     render() {
-        console.log('Header');
         return (
             <div className="header">
                 <h1>Yo</h1>

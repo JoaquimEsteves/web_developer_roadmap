@@ -1,4 +1,4 @@
-export interface robotProps {
+export type robotProps = {
     id: Number; name: string; username:string; email: string;
 }
 
