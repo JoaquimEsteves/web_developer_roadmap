@@ -1,0 +1,19 @@
+{
+  "name": "learn_testing_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles",
+    "test_watch": "jest --watch --detectOpenHandles .*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}

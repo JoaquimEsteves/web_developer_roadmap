@@ -73,7 +73,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "set HTTPS=true&&node scripts/build.js",
+    "take_a_snap": "react-snapshot",
     "test": "node scripts/test.js",
     "serve": "serve -s build"
   },
