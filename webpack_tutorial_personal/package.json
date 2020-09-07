@@ -32,7 +32,7 @@
     "windows-build-tools": "^5.2.2"
   },
   "dependencies": {
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.5.3",
     "lodash": "^4.17.15",
     "react": "^16.8.6"
   }
